@@ -15,15 +15,24 @@ function App() {
   const [imageUrl, setImageUrl] = useState("");
 
   const generateImage = async () => {
-    const imageParameters = {
-      prompt: userPrompt,
-      //n: parseInt(number),
-      n: 1,
-      size: size,
-    };
-    const response = await openai.createImage(imageParameters);
-    const urlData = response.data.data[0].url;
-    setImageUrl(urlData);
+    try {
+      const imageParameters = {
+        prompt: userPrompt,
+        //n: parseInt(number),
+        n: 1,
+        size: size,
+      };
+      const response = await openai.createImage(imageParameters);
+      const urlData = response.data.data[0].url;
+      setImageUrl(urlData);
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.status);
+        console.log(error.response.data);
+      } else {
+        console.log(error.message);
+      }
+    }
   };
 
   return (
