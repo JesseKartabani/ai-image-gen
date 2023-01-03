@@ -12,10 +12,14 @@ function App() {
   const [userPrompt, setUserPrompt] = useState("");
   //const [number, setNumber] = useState(1);
   const [size, setSize] = useState("256x256");
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasImage, setHasImage] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
 
   const generateImage = async () => {
     try {
+      setIsLoading(true);
+
       const imageParameters = {
         prompt: userPrompt,
         //n: parseInt(number),
@@ -25,6 +29,9 @@ function App() {
       const response = await openai.createImage(imageParameters);
       const urlData = response.data.data[0].url;
       setImageUrl(urlData);
+
+      setIsLoading(false);
+      setHasImage(true);
     } catch (error) {
       if (error.response) {
         console.log(error.response.status);
@@ -39,7 +46,15 @@ function App() {
     <main className="App">
       <GenerateImageHeading />
 
-      {imageUrl && <img src={imageUrl} className="image" alt="Ai generated" />}
+      {isLoading ? (
+        // Add loading spinner
+        <p>loading</p>
+      ) : hasImage ? (
+        <img src={imageUrl} alt={userPrompt} />
+      ) : (
+        // Add placeholder img (eventually make a carousel of images that look nice)
+        <p>placeholder img</p>
+      )}
 
       <div className="inputContainer">
         <InputBox label={"Description"} setAttribute={setUserPrompt} />
