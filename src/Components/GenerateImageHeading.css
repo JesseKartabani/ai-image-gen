@@ -1,4 +1,5 @@
 .generateImageHeading {
+  letter-spacing: 0.2rem;
   text-align: center;
   background-image: linear-gradient(to right, #b3f5f5, #732fa3);
   -webkit-background-clip: text;

@@ -10,14 +10,15 @@ const openai = new OpenAIApi(configuration);
 
 function App() {
   const [userPrompt, setUserPrompt] = useState("");
-  const [number, setNumber] = useState(1);
+  //const [number, setNumber] = useState(1);
   const [size, setSize] = useState("256x256");
   const [imageUrl, setImageUrl] = useState("");
 
   const generateImage = async () => {
     const imageParameters = {
       prompt: userPrompt,
-      n: parseInt(number),
+      //n: parseInt(number),
+      n: 1,
       size: size,
     };
     const response = await openai.createImage(imageParameters);
@@ -28,12 +29,29 @@ function App() {
   return (
     <main className="App">
       <GenerateImageHeading />
+
       {imageUrl && <img src={imageUrl} className="image" alt="Ai generated" />}
-      <div>
+
+      <div className="inputContainer">
         <InputBox label={"Description"} setAttribute={setUserPrompt} />
-        <InputBox label={"Amount"} setAttribute={setNumber} />
-        <InputBox label={"Size"} setAttribute={setSize} />
-        <button className="mainButton" onClick={() => generateImage()}>
+
+        {/*<InputBox label={"Amount"} setAttribute={setNumber} />*/}
+
+        {/* Buttons control image sizing */}
+        <div className="sizingButtonsContainer">
+          <button className="sizingButton" onClick={() => setSize("256x256")}>
+            Small
+          </button>
+          <button className="sizingButton" onClick={() => setSize("512x512")}>
+            Medium
+          </button>
+          <button className="sizingButton" onClick={() => setSize("1024x1024")}>
+            Large
+          </button>
+        </div>
+
+        {/* Button calls generate image*/}
+        <button className="generateButton" onClick={() => generateImage()}>
           Generate
         </button>
       </div>

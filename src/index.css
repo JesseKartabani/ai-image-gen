@@ -10,7 +10,8 @@ body {
   font-size: 2rem;
   background-color: #121212;
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
 }
 
 .App {
@@ -19,24 +20,49 @@ body {
   place-items: center;
 }
 
-.mainButton {
+.sizingButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.sizingButton {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  background-color: #b3f5f5;
+  padding: 10px;
+  font-size: 14px;
+  margin: 4px 2px;
+  border: 2;
+  border-radius: 6px;
+}
+
+.sizingButton:focus {
+  border: 2px solid white;
+  background-color: #87eeee;
+}
+
+.generateButton {
+  font-family: "Roboto", sans-serif;
   height: 32px;
   font-size: 14px;
-  width: 110%;
+  width: 100%;
   border: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #732fa3;
   color: white;
   font-weight: 600;
 }
 
-.mainButton:hover {
+.generateButton:hover {
   background-color: #5e1d8c;
   transition: background-color 0.2s;
 }
 
-.mainButton:active {
+.generateButton:active {
   opacity: 0.7;
   transition: opacity 0.2s;
 }
@@ -57,11 +83,15 @@ body {
   }
 
   body {
+    font-size: 33px;
+  }
+
+  .generateButton {
+    height: 50px;
     font-size: 24px;
   }
 
-  .mainButton {
-    height: 50px;
-    font-size: 24px;
+  .sizingButton {
+    font-size: 20px;
   }
 }
