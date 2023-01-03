@@ -41,7 +41,12 @@ body {
 .sizingButton:focus {
   border: 2px solid white;
   background-color: #1eae98;
-  transition: background-color 0.5s;
+  transition: background-color 0.3s;
+}
+
+.sizingButton:hover {
+  border: 2px solid white;
+  transition: all 0.3s;
 }
 
 .generateButton {
