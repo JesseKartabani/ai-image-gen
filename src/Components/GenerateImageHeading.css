@@ -1,0 +1,6 @@
+.generateImageHeading {
+  text-align: center;
+  background-image: linear-gradient(to right, #b3f5f5, #732fa3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

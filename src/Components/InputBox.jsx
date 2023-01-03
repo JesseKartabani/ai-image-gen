@@ -1,13 +1,11 @@
 import React from "react";
+import "./InputBox.css";
 
 export const InputBox = ({ label, setAttribute }) => {
   return (
-    <div className="label-input-pair">
+    <div className="inputBoxContainer">
       <label className="label">{label}</label>
-      <input
-        className="main-input"
-        onChange={(e) => setAttribute(e.target.value)}
-      />
+      <input className="input" onChange={(e) => setAttribute(e.target.value)} />
     </div>
   );
 };

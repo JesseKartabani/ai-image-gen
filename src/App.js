@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
-import { InputBox } from "./InputBox";
+import { InputBox } from "./Components/InputBox";
+import GenerateImageHeading from "./Components/GenerateImageHeading";
 
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -26,13 +27,16 @@ function App() {
 
   return (
     <main className="App">
+      <GenerateImageHeading />
       {imageUrl && <img src={imageUrl} className="image" alt="Ai generated" />}
-      <InputBox label={"Description"} setAttribute={setUserPrompt} />
-      <InputBox label={"Amount"} setAttribute={setNumber} />
-      <InputBox label={"Size"} setAttribute={setSize} />
-      <button className="main-button" onClick={() => generateImage()}>
-        Generate
-      </button>
+      <div>
+        <InputBox label={"Description"} setAttribute={setUserPrompt} />
+        <InputBox label={"Amount"} setAttribute={setNumber} />
+        <InputBox label={"Size"} setAttribute={setSize} />
+        <button className="mainButton" onClick={() => generateImage()}>
+          Generate
+        </button>
+      </div>
     </main>
   );
 }
