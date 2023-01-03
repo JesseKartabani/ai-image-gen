@@ -5,3 +5,9 @@
   -webkit-text-fill-color: transparent;
   font-family: Founders Grotesk, Arial Black, sans-serif;
 }
+
+@media (min-width: 1024px) {
+  .generateImageHeading {
+    font-size: 58px;
+  }
+}

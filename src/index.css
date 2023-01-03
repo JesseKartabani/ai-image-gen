@@ -29,13 +29,14 @@ body {
 
 .sizingButton {
   font-family: Founders Grotesk, Arial Black, sans-serif;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #444654;
   padding: 10px;
   font-size: 14px;
   margin: 4px 2px;
   border: 2;
   border-radius: 6px;
+  border-color: #444654;
 }
 
 .sizingButton:focus {
@@ -46,7 +47,7 @@ body {
 
 .sizingButton:hover {
   border: 2px solid white;
-  transition: all 0.3s;
+  transition: border 0.3s;
 }
 
 .generateButton {
@@ -54,16 +55,17 @@ body {
   height: 32px;
   font-size: 14px;
   width: 100%;
-  border: 0;
+  border: 2;
   border-radius: 6px;
+  border-color: #444654;
   background-color: #1eae98;
   color: white;
   font-weight: 600;
 }
 
 .generateButton:hover {
-  background-color: #007b68;
-  transition: background-color 0.2s;
+  border: 2px solid white;
+  transition: border 0.3s;
 }
 
 .generateButton:active {

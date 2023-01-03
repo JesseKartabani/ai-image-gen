@@ -5,7 +5,10 @@ export const InputBox = ({ label, setAttribute }) => {
   return (
     <div className="inputBoxContainer">
       <label className="label">{label}</label>
-      <input className="input" onChange={(e) => setAttribute(e.target.value)} />
+      <textarea
+        className="input"
+        onChange={(e) => setAttribute(e.target.value)}
+      />
     </div>
   );
 };
