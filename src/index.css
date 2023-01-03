@@ -6,12 +6,10 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 2rem;
+  font-family: Founders Grotesk, Arial Black, sans-serif;
   background-color: #121212;
   color: #fff;
   font-size: 20px;
-  letter-spacing: 0.1rem;
 }
 
 .App {
@@ -30,9 +28,9 @@ body {
 }
 
 .sizingButton {
-  font-family: "Roboto", sans-serif;
+  font-family: Founders Grotesk, Arial Black, sans-serif;
   color: black;
-  background-color: #b3f5f5;
+  background-color: white;
   padding: 10px;
   font-size: 14px;
   margin: 4px 2px;
@@ -42,23 +40,24 @@ body {
 
 .sizingButton:focus {
   border: 2px solid white;
-  background-color: #87eeee;
+  background-color: #1eae98;
+  transition: background-color 0.5s;
 }
 
 .generateButton {
-  font-family: "Roboto", sans-serif;
+  font-family: Founders Grotesk, Arial Black, sans-serif;
   height: 32px;
   font-size: 14px;
   width: 100%;
   border: 0;
   border-radius: 6px;
-  background-color: #732fa3;
+  background-color: #1eae98;
   color: white;
   font-weight: 600;
 }
 
 .generateButton:hover {
-  background-color: #5e1d8c;
+  background-color: #007b68;
   transition: background-color 0.2s;
 }
 

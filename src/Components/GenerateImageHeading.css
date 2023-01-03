@@ -1,7 +1,7 @@
 .generateImageHeading {
-  letter-spacing: 0.2rem;
   text-align: center;
-  background-image: linear-gradient(to right, #b3f5f5, #732fa3);
+  background-image: linear-gradient(to right, #d8b5ff, #1eae98);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: Founders Grotesk, Arial Black, sans-serif;
 }

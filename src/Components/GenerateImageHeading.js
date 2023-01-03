@@ -4,7 +4,7 @@ import "./GenerateImageHeading.css";
 function GenerateImageHeading() {
   return (
     //
-    <h1 className="generateImageHeading">Describe An Image</h1>
+    <h2 className="generateImageHeading">Describe An Image</h2>
   );
 }
 
