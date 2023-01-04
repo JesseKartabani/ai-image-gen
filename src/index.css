@@ -73,6 +73,12 @@ body {
   transition: opacity 0.2s;
 }
 
+.generateButton:disabled {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  border: 0;
+}
+
 .image {
   width: 70%;
 }

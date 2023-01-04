@@ -81,7 +81,11 @@ function App() {
         </div>
 
         {/* Button calls generate image*/}
-        <button className="generateButton" onClick={() => generateImage()}>
+        <button
+          disabled={isLoading}
+          className="generateButton"
+          onClick={() => generateImage()}
+        >
           Generate
         </button>
       </div>
