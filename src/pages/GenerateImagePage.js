@@ -58,46 +58,47 @@ function GenerateImagePage() {
   return (
     <main className="App">
       <GenerateImageHeading />
-
-      {isError ? (
-        // display an error message if there was an error
-        <motion.p
-          initial={{ opacity: 0.5, scale: 0.99 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className="errorMessage"
-        >
-          {errorMessage}
-        </motion.p>
-      ) : isLoading ? (
-        // loading spinner
-        <CircularProgress />
-      ) : hasImage ? (
-        // once image is generated display it
-        <motion.img
-          // Fade and scale image in
-          initial={{ opacity: 0.5, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5 }}
-          className="image"
-          src={imageUrl}
-          alt={userPrompt}
-          loading="lazy"
-        />
-      ) : (
-        // placeholder img (before user has generated an image)
-        <motion.img
-          // Fade and scale image in
-          initial={{ opacity: 0.5, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="image"
-          src={require("../assets/astronaut.jpg")}
-          alt="Astronaut riding a horse"
-          loading="eager"
-        />
-      )}
+      <div className="imageContainer">
+        {isError ? (
+          // display an error message if there was an error
+          <motion.p
+            initial={{ opacity: 0.5, scale: 0.99 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="errorMessage"
+          >
+            {errorMessage}
+          </motion.p>
+        ) : isLoading ? (
+          // loading spinner
+          <CircularProgress />
+        ) : hasImage ? (
+          // once image is generated display it
+          <motion.img
+            // Fade and scale image in
+            initial={{ opacity: 0.5 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+            className="image"
+            src={imageUrl}
+            alt={userPrompt}
+            loading="lazy"
+          />
+        ) : (
+          // placeholder img (before user has generated an image)
+          <motion.img
+            // Fade and scale image in
+            initial={{ opacity: 0.5, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="image"
+            src={require("../assets/astronaut.jpg")}
+            alt="Astronaut riding a horse"
+            loading="eager"
+          />
+        )}
+      </div>
 
       <motion.div
         // Fade and scale div in
