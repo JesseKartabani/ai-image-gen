@@ -80,24 +80,22 @@ body {
 }
 
 .image {
-  height: 100%;
-}
-
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
-  width: auto;
+  width: 70%;
 }
 
 .errorMessage {
   text-align: center;
 }
 
+@media (min-width: 640px) {
+  .image {
+    width: 50%;
+  }
+}
+
 @media (min-width: 1024px) {
-  .imageContainer {
-    height: 100%;
+  .image {
+    width: 20%;
   }
 
   body {
