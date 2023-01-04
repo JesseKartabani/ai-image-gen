@@ -82,6 +82,7 @@ function GenerateImagePage() {
           className="image"
           src={imageUrl}
           alt={userPrompt}
+          loading="lazy"
         />
       ) : (
         // placeholder img (before user has generated an image)
@@ -89,11 +90,12 @@ function GenerateImagePage() {
           // Fade and scale image in
           initial={{ opacity: 0.5, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }}
           className="image"
           src={require("../assets/astronaut.jpg")}
           alt="Astronaut riding a horse"
+          loading="eager"
         />
       )}
 
@@ -101,7 +103,7 @@ function GenerateImagePage() {
         // Fade and scale div in
         initial={{ opacity: 0.5, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         viewport={{ once: true }}
         className="inputContainer"
       >

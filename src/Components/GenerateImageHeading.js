@@ -6,9 +6,9 @@ function GenerateImageHeading() {
   return (
     // Fade in from top of screen
     <motion.h2
-      initial={{ opacity: 0.5, y: -300 }}
+      initial={{ opacity: 0.5, y: -200 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1 }}
       className="generateImageHeading"
     >
       Describe An Image
