@@ -3,6 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { InputBox } from "../Components/InputBox";
 import GenerateImageHeading from "../Components/GenerateImageHeading";
 import { CircularProgress } from "@mui/material";
+import { motion } from "framer-motion";
 
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -60,23 +61,50 @@ function GenerateImagePage() {
 
       {isError ? (
         // display an error message if there was an error
-        <p className="errorMessage">{errorMessage}</p>
+        <motion.p
+          initial={{ opacity: 0.5, scale: 0.99 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="errorMessage"
+        >
+          {errorMessage}
+        </motion.p>
       ) : isLoading ? (
         // loading spinner
         <CircularProgress />
       ) : hasImage ? (
         // once image is generated display it
-        <img className="image" src={imageUrl} alt={userPrompt} />
+        <motion.img
+          // Fade and scale image in
+          initial={{ opacity: 0.5, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="image"
+          src={imageUrl}
+          alt={userPrompt}
+        />
       ) : (
         // placeholder img (before user has generated an image)
-        <img
+        <motion.img
+          // Fade and scale image in
+          initial={{ opacity: 0.5, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
           className="image"
           src={require("../assets/astronaut.jpg")}
           alt="Astronaut riding a horse"
         />
       )}
 
-      <div className="inputContainer">
+      <motion.div
+        // Fade and scale div in
+        initial={{ opacity: 0.5, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="inputContainer"
+      >
         <InputBox label={"Description"} setAttribute={setUserPrompt} />
 
         {/*<InputBox label={"Amount"} setAttribute={setNumber} />*/}
@@ -102,7 +130,7 @@ function GenerateImagePage() {
         >
           Generate
         </button>
-      </div>
+      </motion.div>
     </main>
   );
 }
