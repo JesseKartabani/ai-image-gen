@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import { InputBox } from "./Components/InputBox";
 import GenerateImageHeading from "./Components/GenerateImageHeading";
+import { CircularProgress } from "@mui/material";
 
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -48,9 +49,9 @@ function App() {
 
       {isLoading ? (
         // Add loading spinner
-        <p>loading</p>
+        <CircularProgress />
       ) : hasImage ? (
-        <img src={imageUrl} alt={userPrompt} />
+        <img className="image" src={imageUrl} alt={userPrompt} />
       ) : (
         // Add placeholder img (eventually make a carousel of images that look nice)
         <p>placeholder img</p>
