@@ -16,6 +16,8 @@ function GenerateImagePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasImage, setHasImage] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const generateImage = async () => {
     try {
@@ -33,21 +35,33 @@ function GenerateImagePage() {
 
       setIsLoading(false);
       setHasImage(true);
+      setIsError(false);
     } catch (error) {
       if (error.response) {
         console.log(error.response.status);
         console.log(error.response.data);
+        setIsLoading(false);
+        setIsError(true);
+        setErrorMessage(error.response.data.error.message);
       } else {
         console.log(error.message);
       }
     }
   };
 
+  function handleImageGeneration() {
+    setIsError(false);
+    generateImage();
+  }
+
   return (
     <main className="App">
       <GenerateImageHeading />
 
-      {isLoading ? (
+      {isError ? (
+        // display an error message if there was an error
+        <p className="errorMessage">{errorMessage}</p>
+      ) : isLoading ? (
         // loading spinner
         <CircularProgress />
       ) : hasImage ? (
@@ -84,7 +98,7 @@ function GenerateImagePage() {
         <button
           disabled={isLoading}
           className="generateButton"
-          onClick={() => generateImage()}
+          onClick={() => handleImageGeneration()}
         >
           Generate
         </button>
