@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
 .label {
@@ -20,6 +21,7 @@
   font-family: Founders Grotesk, Arial Black, sans-serif;
   color: white;
   resize: none;
+  padding: 10px;
 }
 
 .input::-webkit-scrollbar {

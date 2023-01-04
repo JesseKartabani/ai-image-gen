@@ -48,13 +48,18 @@ function App() {
       <GenerateImageHeading />
 
       {isLoading ? (
-        // Add loading spinner
+        // loading spinner
         <CircularProgress />
       ) : hasImage ? (
+        // once image is generated display it
         <img className="image" src={imageUrl} alt={userPrompt} />
       ) : (
-        // Add placeholder img (eventually make a carousel of images that look nice)
-        <p>placeholder img</p>
+        // placeholder img (before user has generated an image)
+        <img
+          className="image"
+          src={require("./assets/astronaut.jpg")}
+          alt="Astronaut riding a horse"
+        />
       )}
 
       <div className="inputContainer">

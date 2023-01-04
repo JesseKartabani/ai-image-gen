@@ -8,6 +8,7 @@ export const InputBox = ({ label, setAttribute }) => {
       <textarea
         className="input"
         onChange={(e) => setAttribute(e.target.value)}
+        placeholder="An astronaut riding a horse in a photorealistic style"
       />
     </div>
   );
