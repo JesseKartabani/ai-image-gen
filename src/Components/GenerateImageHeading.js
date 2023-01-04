@@ -8,7 +8,7 @@ function GenerateImageHeading() {
     <motion.h2
       initial={{ opacity: 0.5, y: -300 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.8 }}
       className="generateImageHeading"
     >
       Describe An Image

@@ -87,9 +87,9 @@ function GenerateImagePage() {
         // placeholder img (before user has generated an image)
         <motion.img
           // Fade and scale image in
-          initial={{ opacity: 0.5, scale: 0.5 }}
+          initial={{ opacity: 0.5, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="image"
           src={require("../assets/astronaut.jpg")}
@@ -99,9 +99,9 @@ function GenerateImagePage() {
 
       <motion.div
         // Fade and scale div in
-        initial={{ opacity: 0.5, scale: 0.5 }}
+        initial={{ opacity: 0.5, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         className="inputContainer"
       >
