@@ -1,0 +1,19 @@
+.image {
+  width: 70%;
+}
+
+.errorMessage {
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .image {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image {
+    width: 20%;
+  }
+}
