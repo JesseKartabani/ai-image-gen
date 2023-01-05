@@ -1,0 +1,37 @@
+.sizingButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.sizingButton {
+  font-family: Founders Grotesk, Arial Black, sans-serif;
+  color: white;
+  background-color: #444654;
+  padding: 10px;
+  font-size: 14px;
+  margin: 4px 2px;
+  border: 2;
+  border-radius: 6px;
+  border-color: #444654;
+}
+
+.sizingButton:focus {
+  border: 2px solid white;
+  background-color: #1eae98;
+  transition: background-color 0.3s;
+}
+
+.sizingButton:hover {
+  border: 2px solid white;
+  transition: border 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .sizingButton {
+    font-size: 20px;
+  }
+}

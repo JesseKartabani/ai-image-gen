@@ -4,6 +4,7 @@ import { InputBox } from "../Components/InputBox";
 import GenerateImageHeading from "../Components/GenerateImageHeading";
 import { CircularProgress } from "@mui/material";
 import { motion } from "framer-motion";
+import SizingButtons from "../Components/SizingButtons";
 
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -117,17 +118,7 @@ function GenerateImagePage() {
         {/*<InputBox label={"Amount"} setAttribute={setNumber} />*/}
 
         {/* Buttons control image sizing */}
-        <div className="sizingButtonsContainer">
-          <button className="sizingButton" onClick={() => setSize("256x256")}>
-            Small
-          </button>
-          <button className="sizingButton" onClick={() => setSize("512x512")}>
-            Medium
-          </button>
-          <button className="sizingButton" onClick={() => setSize("1024x1024")}>
-            Large
-          </button>
-        </div>
+        <SizingButtons setSize={setSize} />
 
         {/* Button calls generate image*/}
         <button
