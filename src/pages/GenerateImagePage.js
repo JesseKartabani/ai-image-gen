@@ -5,6 +5,7 @@ import GenerateImageHeading from "../Components/GenerateImageHeading";
 import { CircularProgress } from "@mui/material";
 import { motion } from "framer-motion";
 import SizingButtons from "../Components/SizingButtons";
+import GenerateButton from "../Components/GenerateButton";
 
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
@@ -121,13 +122,10 @@ function GenerateImagePage() {
         <SizingButtons setSize={setSize} />
 
         {/* Button calls generate image*/}
-        <button
-          disabled={isLoading}
-          className="generateButton"
-          onClick={() => handleImageGeneration()}
-        >
-          Generate
-        </button>
+        <GenerateButton
+          isLoading={isLoading}
+          handleImageGeneration={handleImageGeneration}
+        />
       </motion.div>
     </main>
   );
