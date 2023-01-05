@@ -19,10 +19,12 @@ function GenerateImagePage() {
   const [imageUrl, setImageUrl] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isError, setIsError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const generateImage = async () => {
     try {
       setIsLoading(true);
+      setImageLoaded(false);
 
       const imageParameters = {
         prompt: userPrompt,
@@ -77,12 +79,15 @@ function GenerateImagePage() {
         <motion.img
           // Fade and scale image in
           initial={{ opacity: 0.5, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
           className="image"
           src={imageUrl}
           alt={userPrompt}
-          loading="lazy"
+          // Only display image once its fully loaded
+          // prevents images loading in from top to bottom
+          onLoad={() => setImageLoaded(true)}
+          style={imageLoaded ? {} : { display: "none" }}
         />
       ) : (
         // placeholder img (before user has generated an image)
