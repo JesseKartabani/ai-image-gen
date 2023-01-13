@@ -25,7 +25,7 @@ const ImageContainer = ({
           {errorMessage}
         </motion.p>
       ) : isLoading ? (
-        <CircularProgress />
+        <CircularProgress data-testid="circular-progress" />
       ) : hasImage ? (
         <motion.img
           initial={{ opacity: 0.5, scale: 0.9 }}

@@ -1,7 +1,7 @@
 import { render, fireEvent } from "@testing-library/react";
 import GenerateButton from "../Components/GenerateButton";
 
-describe("GenerateButton", () => {
+describe("Generate Button", () => {
   test('renders the button with the text "Generate"', () => {
     const { getByText } = render(<GenerateButton />);
     const button = getByText("Generate");

@@ -1,7 +1,7 @@
 import { render, fireEvent } from "@testing-library/react";
 import SizingButtons from "../Components/SizingButtons";
 
-describe("SizingButtons", () => {
+describe("Sizing Buttons", () => {
   test('renders three buttons with text "Small", "Medium", "Large"', () => {
     const { getByText } = render(<SizingButtons />);
     const smallButton = getByText("Small");
