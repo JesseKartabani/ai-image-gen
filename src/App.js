@@ -21,7 +21,7 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<GenerateImagePage />} />
+      <Route path="/" element={<GenerateImagePage app={app} />} />
 
       <Route path="/edit-image" element={<GenerateImagePage />} />
     </Routes>

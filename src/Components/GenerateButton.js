@@ -2,15 +2,19 @@
 import React from "react";
 import "./GenerateButton.css";
 
-const GenerateButton = ({ isLoading, handleImageGeneration }) => {
+const GenerateButton = ({ isLoading, handleImageGeneration, user }) => {
   return (
-    <button
-      disabled={isLoading}
-      className="generateButton"
-      onClick={() => handleImageGeneration()}
-    >
-      Generate
-    </button>
+    <>
+      {user && (
+        <button
+          disabled={isLoading}
+          className="generateButton"
+          onClick={() => handleImageGeneration()}
+        >
+          Generate
+        </button>
+      )}
+    </>
   );
 };
 

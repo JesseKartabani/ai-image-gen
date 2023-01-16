@@ -1,0 +1,36 @@
+.google-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #474749;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  background: linear-gradient(265.27deg, #0000 20.55%, #414350 94.17%);
+  background-color: #414350;
+  transition: all 0.2s ease-in;
+  color: white;
+  margin-top: 20px;
+  font-family: Founders Grotesk, Arial Black, sans-serif;
+}
+
+.google-button:hover {
+  background-color: #47afae;
+  border-color: white;
+}
+
+.google-button:active {
+  opacity: 0.2;
+}
+
+@media (min-width: 1024px) {
+  .google-button {
+    font-size: 18px;
+    margin-top: 40px;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
